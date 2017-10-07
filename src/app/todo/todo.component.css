@@ -1,0 +1,20 @@
+.completed {
+    color: lightgrey;
+    text-decoration: line-through;
+}
+
+.completed::after {
+
+}
+
+i.fa {
+    margin-left: 30px;
+}
+
+.fa-window-close {
+    color: crimson;
+}
+
+.todo-list {
+    list-style: none;
+}

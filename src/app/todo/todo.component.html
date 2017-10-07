@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Angular 4 ToDo list</h2>
+
+    <br>
+    <form novalidate [formGroup]="form" class="form-inline" (submit)="addTodo()">
+        <div class="form-group">
+            <input placeholder="What needs to be done?" formControlName="newTask" type="text" class="form-control"
+                   [(ngModel)]="newTodo">
+        </div>
+        <button class="btn btn-success btn-sm" type="submit" [disabled]="form.invalid">Add new task</button>
+    </form>
+    <ul class="todo-list">
+        <li *ngFor="let todo of todos">
+            <div class="checkbox">
+                <input class="toggle" type="checkbox" (change)="todo.isDone = !todo.isDone">
+                <label [ngClass]="{completed: todo.isDone}">{{todo.title}}</label>
+                <i class="fa fa-window-close fa-lg" aria-hidden="true" (click)="deleteTodo(todo)"></i>
+            </div>
+        </li>
+    </ul>
+</div>
